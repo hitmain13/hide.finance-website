@@ -1,0 +1,395 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+:root {
+    --dark-gray: #4d4d4d;
+    --ggreen: #009141;
+    --light-green: rgb(0, 189, 0);
+    --rred: rgb(255, 56, 56);
+    --almostWhite: rgb(247, 247, 247);
+    --border-light: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    --border-simple: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+html {
+    font-size: 87.5%;
+    /* 14px (browser default: 16px) */
+}
+
+header {
+    background: var(--ggreen);
+    padding: 2rem 2rem 8rem;
+    text-align: center;
+}
+
+#logo {
+    font-weight: 100;
+    color: ghostwhite;
+}
+
+body {
+    background: rgb(230, 230, 230);
+}
+
+.container {
+    width: min(80vw, 1000px);
+    margin: auto;
+}
+
+h2 {
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+}
+
+#balance {
+    margin-top: -6.5rem;
+}
+
+#balance h2 {
+    margin-top: 0;
+    padding: 0rem;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+#transactions h2 {
+    font-weight: 500;
+    font-size: 2rem;
+    color: black;
+}
+
+#transactions {
+    display: block;
+    overflow-x: auto;
+}
+
+.sr-only {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: -px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+    color:#4d4d4d
+}
+
+.card {
+    color: black;
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    background: ghostwhite;
+    border: 2px solid ghostwhite;
+    box-shadow: var(--border-simple);
+}
+
+.card.incomes {
+    color:#009141;
+}
+
+.card.expenses {
+    color: red;
+}
+
+.card:hover {
+    background: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
+    cursor: default;
+}
+
+.card h2 {
+    font-size: 1rem;
+}
+
+.card h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card p {
+    font-size: 2rem;
+}
+
+.green {
+    border: solid 2px rgb(0, 121, 0);
+    color: var(--ggreen);
+}
+
+.btn.green {
+    background-color: green;
+    color: ghostwhite;
+}
+.btn.green:hover {
+    background-color: var(--ggreen);
+}
+
+.red {
+    border: 2px solid red;
+    color: red;
+}
+
+.btn.red {
+    color: ghostwhite;
+    background-color: red
+}
+
+.btn.red:hover {
+    background-color: var(--rred);
+}
+
+.card.total.green:hover {
+    border: solid 2px rgb(0, 179, 0);
+}
+
+.card.total.red:hover {
+    border: solid 2px rgb(255, 107, 107);
+}
+
+a {
+    text-decoration: none;
+    color: green;
+}
+
+a:hover {
+    color: var(--light-green);
+}
+
+.button.new {
+    display: inline-block;
+    margin-bottom: .8rem;
+}
+
+table thead th:first-child {
+    border-radius: 1rem 0 0 1rem;
+}
+
+table thead th:last-child {
+    border-radius: 0rem 1rem 1rem 0rem;
+}
+
+table th {
+    background: rgba(248, 248, 255, 0.707);
+    color: black;
+    padding: 0.3rem;
+    font-size: 1.2rem;
+}
+
+table tbody td:first-child {
+    border-radius: 1rem 0 0 1rem;
+}
+
+table tbody td:last-child {
+    border-radius: 0rem 1rem 1rem 0rem;
+}
+
+table td {
+    background: rgba(248, 248, 255, 0.707);
+    padding: 0.3rem;
+    text-align: center;
+    color: black;
+}
+
+td.description {
+    color: black;
+}
+
+td.income {
+    color: var(--ggreen);
+}
+
+td.expense {
+    color: red;
+}
+
+table tr:hover {
+    background: rgb(243, 243, 248);
+}
+
+#data-table {
+    width: 100%;
+    border-spacing: 0 0.2rem;
+}
+
+.icons-field {
+    align-items: center;
+    width: 15%
+}
+
+.edit-icon{
+    padding: 0 0.5rem 0 0.5rem;
+}
+
+.remove-icon{
+    padding: 0 0.5rem 0 0.5rem;
+}
+
+.remove-icon, .edit-icon:hover {
+    cursor: pointer;
+}
+
+
+/* -- Modal --*/
+
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+}
+
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-overlay-confirm {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+}
+
+.modal-overlay-confirm.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.modal {
+    background-color: rgb(240, 240, 240);
+    padding: 3rem;
+    border-radius: 0.2rem;
+    width: 90%;
+    max-width: 500px;
+    min-width: 300px;
+    z-index: 1;
+    box-shadow: var(--border-simple);
+}
+
+.modal-confirm {
+    background-color: rgb(240, 240, 240);
+    padding: 2rem;
+    border-radius: 0.2rem;
+    z-index: 1;
+    box-shadow: var(--border-simple);
+}
+
+.modal-confirm h2 {
+    padding: 0 2rem 2rem;
+    margin: 0;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+#form {
+    width: 100%;
+    margin: -3rem 0 0;
+}
+
+.input-group {
+    width: 100%;
+    margin-top: 0.8rem;
+}
+
+.input-group input {
+    width: 100%;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.6rem;
+    box-shadow: var(--border-light);
+}
+
+.input-group.actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.input-group small {
+    font-size: 12px;
+}
+
+button {
+    border: none;
+    border-radius: 0.2rem;
+    color: black;
+    width: 40%;
+    padding: 0.8rem;
+    background-color: white;
+    box-shadow: var(--border-light);
+}
+.btn.hover:hover {
+    background: var(--almostWhite)
+}
+
+button:hover {
+    background: var(--light-green);
+    cursor: pointer;
+}
+
+.button.cancel {
+    color: red;
+    border: 2px red solid;
+    border-radius: 0.2rem;
+    opacity: 0.8;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--border-light);
+}
+
+.button.cancel:hover {
+    opacity: 0.6;
+    background: rgb(255, 255, 255);
+}
+
+footer {
+    margin: 5rem 0 1rem;
+    text-align: center;
+}
+
+footer p {
+    opacity: 0.5;
+}
+
+
+/* -- Responsive --*/
+
+@media (min-width: 768px) {
+    .modal:not html {
+        font-size: 93.5%;
+        /* 15px */
+    }
+    #balance {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}

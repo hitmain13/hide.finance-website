@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,700;1,300&display=swap"
+        rel="stylesheet">
+    <title>HIDE.Finance$ - Website</title>
+    <link rel="icon" href="./assets/logo.png">
+</head>
+
+<body">
+    <header>
+        <div>
+            <img src="./assets/logo.png" width="75" height="75" alt="logo hide finance">
+            <h1 id="logo">HIDE.Finance$</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id='balance'>
+            <h2 class="sr-only">Balanço</h2>
+
+            <div class="card incomes">
+                <h3>
+                    <span>Entradas</span>
+                    <img src="./assets/income.svg" alt="logo income">
+                </h3>
+                <p id="incomes-display">R$ 0,00</p>
+            </div>
+
+            <div class="card expenses">
+                <h3>
+                    <span>Saídas</span>
+                    <img src="./assets/expense.svg" alt="logo expense">
+                </h3>
+                <p id="expenses-display">R$ 0,00</p>
+            </div>
+
+            <div class="card total">
+                <h3>
+                    <span>Carteira</span>
+                    <img src="./assets/total.png" alt="logo total">
+                    </h2>
+                    <p id="total-amount-display">R$ 0,00</p>
+            </div>
+        </section>
+
+        <section id='transactions'>
+            <h2 class="sr-only">Transações</h2>
+            <a href="#" onclick="Modal.toggleState('new')" class="button new">+ Nova transação</a>
+            <table id="data-table">
+                <thead>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <div class="modal-overlay">
+        <div class="modal">
+            <div id="form">
+                <h2 class="title">Nova Transação</h2>
+                <form action="" onsubmit="Form.submit(event)">
+                    <div class="input-group">
+                        <label class="sr-only" for="description">Descrição</label>
+                        <input type="text" id="description" name="description" placeholder="Descrição" autocomplete="off"/>
+                    </div>
+                    <div class="input-group">
+                        <label class="sr-only" for="amount">Valor</label>
+                        <input type="number" step=0.01 id="amount" name="amount" placeholder="0,00" autocomplete="off" />
+                        <small class="help">Use o sinal - (negativo) para despesas e , (vírgula) para casa decimais.</small>
+                    </div>
+                    <div class="input-group">
+                        <label class="sr-only" for="date">Descrição</label>
+                        <input type="date" id="date" name="date" placeholder="dd/mm/aaaa"/>
+                    </div>
+                    <div class="input-group actions">
+                        <a href="#" onclick="Modal.toggleState()" class="button cancel">Cancelar</a>
+                        <button class="btn-save">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay-confirm">
+        <div class="modal-confirm">
+            <div class="confirm">
+                <h2>Deseja realmente excluir?</h2>
+                <div class="button-group">
+                    <button onclick="Modal.toggleScreen()" class="btn hover">Não</button>
+                    <button onclick="Modal.toggleScreen(null, 'yes')" class="btn hover">Sim</button>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p> HIDE.Finance$ - Feito com ❤ por Fábio Matsumoto. Todos os direitos reservados.</p>
+    </footer>
+</body>
+<script src="./scripts.js"></script>
+
+</html>

@@ -1,6 +1,6 @@
 var formMode;
 var indexItem;
-// Utilidades pro funcionamento do código.
+
 const utils = {
 
     formatCurrency(value) {
@@ -57,8 +57,8 @@ const utils = {
 
 }
 
-const Modal = { // Janela "+ Nova transação"
-    toggleState(mode) { // Permite entrar ou sair da tela add/excluindo a class "active"
+const Modal = { 
+    toggleState(mode) { 
         formMode = mode
         Form.clearFields()
         document.querySelector('.modal-overlay').classList.toggle('active')
@@ -204,8 +204,8 @@ const DOM = {
         <td class="${CSSClass}">${formattedAmount}</td>
         <td class="date">${transactions.date}</td>
         <td class="icons-field">
-            <img class="edit-icon" weight=25px height=25px onclick="Transaction.edit(${index})"src="./assets/edit.svg" alt="logo edit transaction"/>
-            <img class="remove-icon" onclick="Modal.toggleScreen(${index})"src="./assets/minus.svg" alt="logo remove transaction"/>
+            <img class="edit-icon" weight=25px height=25px onclick="Transaction.edit(${index})"src="./assets/img/edit.svg" alt="logo edit transaction"/>
+            <img class="remove-icon" onclick="Modal.toggleScreen(${index})"src="./assets/img/minus.svg" alt="logo remove transaction"/>
         </td>
         `
         return html
@@ -214,6 +214,7 @@ const DOM = {
 
     clearTransactions() {
         DOM.transactionsContainer.innerHTML = ""
+        document.querySelector('#form h2').innerHTML = `Nova transação`
     }
 }
 
@@ -261,7 +262,7 @@ const Form = {
             Form.validateFields()
             const transaction = Form.formatValues()
             Form.saveTransaction(transaction)
-            Modal.toggleState()
+            Modal.toggleState('new')
             Form.clearFields()
         }
         catch (error) {

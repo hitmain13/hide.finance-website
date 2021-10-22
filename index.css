@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Titillium Web', sans-serif;
+    transition: all 0.1s ease-in-out;
 }
 
 :root {
@@ -21,7 +22,8 @@ html {
 }
 
 header {
-    background: var(--ggreen);
+    background: rgb(46,46,46);
+    background: radial-gradient(circle, rgba(46, 46, 46, 0.933) 0%, rgba(37,37,37,1) 50%, rgb(34, 34, 34) 100%);
     padding: 2rem 2rem 8rem;
     text-align: center;
 }
@@ -60,6 +62,7 @@ h2 {
     font-weight: 500;
     font-size: 2rem;
     color: black;
+    background-color: red;
 }
 
 #transactions {
@@ -85,9 +88,15 @@ h2 {
     padding: 1rem 1rem;
     border-radius: 1rem;
     margin-bottom: 1rem;
-    background: ghostwhite;
+    background: rgba(248, 248, 255, 0.97);
     border: 2px solid ghostwhite;
-    box-shadow: var(--border-simple);
+    box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 1.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 20px 80px rgba(0, 0, 0, 0.12)
 }
 
 .card.incomes {
@@ -99,7 +108,7 @@ h2 {
 }
 
 .card:hover {
-    background: rgb(255, 255, 255);
+    background: rgba(248, 248, 255);
     border: 2px solid rgb(255, 255, 255);
     cursor: default;
 }
@@ -118,8 +127,16 @@ h2 {
     font-size: 2rem;
 }
 
+.card.total.green:hover {
+    border: solid 2px rgb(0, 179, 0);
+}
+
+.card.total.red:hover {
+    border: solid 2px rgb(255, 107, 107);
+}
+
 .green {
-    border: solid 2px rgb(0, 121, 0);
+    border: solid 2px rgb(0, 179, 0);
     color: var(--ggreen);
 }
 
@@ -143,14 +160,6 @@ h2 {
 
 .btn.red:hover {
     background-color: var(--rred);
-}
-
-.card.total.green:hover {
-    border: solid 2px rgb(0, 179, 0);
-}
-
-.card.total.red:hover {
-    border: solid 2px rgb(255, 107, 107);
 }
 
 a {

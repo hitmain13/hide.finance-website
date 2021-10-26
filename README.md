@@ -18,4 +18,4 @@
 
 - Open the file "index.html" in your favorite browser;
 
-- Enjoy the game!
+- Enjoy!

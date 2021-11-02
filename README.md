@@ -1,4 +1,6 @@
-"# hide.finances-website" --v1.1
+💰 hide.finances Application 💰
+
+!["thumbnail"](https://github.com/hitmain13/hide.finance-website/blob/main/thumbnail.png)
 
 ###### Technologies used:
  - HTML5;
@@ -19,3 +21,9 @@
 - Open the file "index.html" in your favorite browser;
 
 - Enjoy!
+---
+
+### ✈️ Accessing the project
+
+You can click below and access the project by GitHub Pages:
+https://hitmain13.github.io/hide.finance-website/#

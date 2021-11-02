@@ -2,7 +2,7 @@
 💰 Hide.Finances Application 💰
 </h1>
 
-!["thumbnail"](https://github.com/hitmain13/hide.finance-website/blob/main/thumbnail.png)
+!["thumbnail"](https://github.com/hitmain13/hide.finance-website/blob/main/assets/img/thumbnail.png)
 
 <h4 align="center">
  Within the application, it's possible to register expenses and incomes, creating a financial statement and saving the information in the browser's Local Storage feature.

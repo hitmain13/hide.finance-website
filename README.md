@@ -33,3 +33,6 @@
 
 You can click below and access the project by GitHub Pages:
 https://hitmain13.github.io/hide.finance-website/#
+
+
+### application made through the Discover - Rocketseat 🚀 course.

@@ -11,7 +11,7 @@
 ###### Technologies used:
  - HTML5;
  - CSS3;
- - JavaScript (ES21)
+ - JavaScript (ES6)
  - GIT (version control system)
  
  ###### Requirements:
